@@ -1,7 +1,6 @@
 import json
 
-file = open('Streaming_History_Audio_2025_1.json')
-#file = open('Streaming_History_Audio_2022-2025_0.json')
+file = open('Streaming_History_Audio_DATE.json')
 
 data = json.load(file)
 
@@ -38,16 +37,7 @@ outputlist.sort(key=sortbylistens)
 totallistens=0
 
 for i in outputlist:
-#	print(i)
 	totallistens=totallistens+i["listens"]
-
-# for i in range(1):
-# 	print('\n')
-#
-# print("Total Songs:\t"+str(len(outputlist)))
-# print("Total Songs with Repeats:\t"+str(totallistens))
-#
-# print('\n')
 
 with open("outputfile.txt", "w") as f:
 	for i in outputlist:
